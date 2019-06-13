@@ -1,5 +1,7 @@
 # wsdd-docker
-Docker container for wsdd.py
+Docker container for wsdd.py. 
+
+wsdd implements a Web Service Discovery host daemon. This enables (Samba) hosts, like your local NAS device, to be found by Web Service Discovery Clients like Windows.
 
 ## Running container
 ### From command line
