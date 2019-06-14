@@ -1,19 +1,23 @@
 # wsdd-docker
-Docker container for wsdd.py. 
+Docker image for wsdd.py. 
 
-wsdd implements a Web Service Discovery host daemon. This enables (Samba) hosts, like your local NAS device, to be found by Web Service Discovery Clients like Windows.
+wsdd implements a Web Service Discovery host daemon. This enables (Samba) hosts, like your local NAS device or Linux server, to be found by Web Service Discovery Clients like Windows.
 
 ## Running container
 ### From command line
-`docker run --net=host -e HOSTNAME=$(hostname) jonasped/wsdd`
+```
+docker run --net=host -e HOSTNAME=$(hostname) jonasped/wsdd
+```
 
 It is important that the container is run with the argument --net=host and that the environment variabel HOSTNAME is set to the same value as your Samba netbios name. Samba netbios name defaults to the hostname. 
 
 ### From docker compose
 A docker-compose.yml file could look like the one below. 
-`        wsdd:
+```
+        wsdd:
                 image: "jonasped/wsdd"
                 environment:
                         - HOSTNAME=NETBIOS_NAME
                 restart: unless-stopped
-                network_mode: "host"`
+                network_mode: "host"
+```
