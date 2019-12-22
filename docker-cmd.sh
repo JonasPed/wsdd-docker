@@ -19,5 +19,5 @@ fi
 
 
 
-python wsdd.py ${args}
+exec python wsdd.py ${args}
 
