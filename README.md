@@ -4,11 +4,13 @@ Docker image for wsdd.py.
 wsdd implements a Web Service Discovery host daemon. This enables (Samba) hosts, like your local NAS device or Linux server, to be found by Web Service Discovery Clients like Windows.
 
 ## Supported environment variables
-HOSTNAME: Samba Netbios name to report.
+`HOSTNAME`: Samba Netbios name to report.
 
-WORKGROUP: Workgroup name
+`WORKGROUP`: Workgroup name
 
-DOMAIN: Report being a member of an AD DOMAIN. Disables WORKGROUP if set. 
+`DOMAIN`: Report being a member of an AD DOMAIN. Disables `WORKGROUP` if set.
+
+Alternatively, you can pass all desired wsdd arguments in the environment variable `WSDD_ARGS`. In this case, the arguments are passed as-is and all other environment variables are ignored.
 
 ## Running container
 ### From command line
